@@ -21,5 +21,5 @@ hellomake: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ ./hellomake
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ ./hellomake ../tests/$(ODIR)/*.o
 
