@@ -26,6 +26,9 @@ hellomake: $(OBJ)
 test: ../tests/obj/check_hellomake.o
 	gcc -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm
 
+run-test: test
+	./test
+
 .PHONY: clean
 
 clean:
