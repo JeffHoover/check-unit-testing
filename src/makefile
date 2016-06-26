@@ -11,15 +11,23 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = hellomake.o hellofunc.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-__$(ODIR)/%.o: %.c $(DEPS)
+_$(ODIR)/%.o: %.c $(DEPS)
 obj/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
+
+all: hellomake test
 
 hellomake: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
 
+../tests/obj/check_hellomake.o: ../tests/check_hellomake.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+test: ../tests/obj/check_hellomake.o
+	gcc -o $@ $^ $(CFLAGS) 
+
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ ./hellomake ../tests/$(ODIR)/*.o
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ ./hellomake ../tests/$(ODIR)/*.o ./test 
 
