@@ -24,7 +24,7 @@ hellomake: $(OBJ)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 test: ../tests/obj/check_hellomake.o hellofunc.o 
-	gcc -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm -lrt
+	$(CC) -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm -lrt
 
 run-test: test
 	./test

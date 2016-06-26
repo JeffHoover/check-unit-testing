@@ -16,9 +16,9 @@ teardown (void)
 START_TEST (test_name)
 {
   int a=3, b=3;
-  ck_assert_int_eq(0,1);
   ck_assert_msg(0==1,"Zero does not equal one.");
-  fail_unless(a+b==16, "err");
+  fail_unless(a+b==16, "Expected 16.");
+  ck_assert_int_eq(0,1);
 }
 END_TEST
 
@@ -26,7 +26,7 @@ END_TEST
 Suite *
 hellomake_suite (void)
 {
-  Suite *s = suite_create ("Money");
+  Suite *s = suite_create ("Unit Tests");
 
   /* Core test case */
   TCase *tc_core = tcase_create ("Core");
