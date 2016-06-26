@@ -15,3 +15,7 @@ http://stackoverflow.com/questions/14176180/is-there-a-more-basic-tutorial-for-t
 http://stackoverflow.com/questions/1662909/undefined-reference-to-pthread-create-in-linux
 
 http://stackoverflow.com/questions/8671366/undefined-reference-to-pow-and-floor
+
+http://stackoverflow.com/questions/259784/what-libraries-need-to-be-linked-for-timer-create-timer-settime-and-other-timer
+
+

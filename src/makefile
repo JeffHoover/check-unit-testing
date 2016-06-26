@@ -23,7 +23,7 @@ hellomake: $(OBJ)
 ../tests/obj/check_hellomake.o: ../tests/check_hellomake.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-test: ../tests/obj/check_hellomake.o
+test: ../tests/obj/check_hellomake.o hellofunc.o 
 	gcc -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm
 
 run-test: test
