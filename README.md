@@ -19,3 +19,8 @@ http://stackoverflow.com/questions/8671366/undefined-reference-to-pow-and-floor
 http://stackoverflow.com/questions/259784/what-libraries-need-to-be-linked-for-timer-create-timer-settime-and-other-timer
 
 
+@schmonz:
+test_name needs to be added to a TCase with tcase_add_test
+And then the TCase needs to be added to a Suite
+And then your test main() needs to add the Suite to an SRunner, which you tell to run
+I just stole code from the example money thing
