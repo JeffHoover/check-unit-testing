@@ -15,7 +15,7 @@ _$(ODIR)/%.o: %.c $(DEPS)
 obj/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-all: hellomake
+all: hellomake test
 
 hellomake: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
