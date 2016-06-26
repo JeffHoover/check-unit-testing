@@ -15,7 +15,7 @@ _$(ODIR)/%.o: %.c $(DEPS)
 obj/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-all: hellomake test
+all: hellomake
 
 hellomake: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
@@ -24,7 +24,7 @@ hellomake: $(OBJ)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 test: ../tests/obj/check_hellomake.o
-	gcc -o $@ $^ $(CFLAGS) 
+	gcc -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm
 
 .PHONY: clean
 
