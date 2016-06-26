@@ -13,7 +13,7 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 _$(ODIR)/%.o: %.c $(DEPS)
 obj/%.o: %.c $(DEPS)
-	$(CC) -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 all: hellomake test
 
@@ -24,7 +24,7 @@ hellomake: $(OBJ)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 test: ../tests/obj/check_hellomake.o hellofunc.o 
-	$(CC) -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm
+	gcc -pthread -o $@ -o $@ $^ $(CFLAGS) -l check -lm -lrt
 
 run-test: test
 	./test
